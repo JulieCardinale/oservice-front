@@ -1,0 +1,14 @@
+/* * * * * * * * * * * * * * * *
+* o'service my profile option *
+*/ 
+.my-profile-options {
+
+  @include flex(flex-end, center, row);
+  @include size(100%, inerit);
+
+  @media #{$small} { 
+    // 3 icons : @include flex(space-between, center, row) 
+    @include flex(space-evenly, center, row) 
+  }
+
+}

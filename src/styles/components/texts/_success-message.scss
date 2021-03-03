@@ -1,0 +1,33 @@
+/* * * * * * * * * * * * * *
+* oservice success message *
+*/ 
+.oservice-success-message {
+
+  @include flex(center, center, column);
+  @include margin($bottom: $gutter);
+  padding: 1rem;
+  border: 2px solid $second-color;
+  border-radius: 10px;
+  background-color: white;
+  filter: drop-shadow(1px 1px 5px grey);
+  animation: 600ms ease-in-out messageScale;
+
+}
+
+/* * * * * * * * * * * * * * * * * * *
+* oservice success message animation *
+*/ 
+@keyframes messageScale {
+  from {
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  75%{
+    transform: scale(0.95);
+  }
+  100%{
+    transform: scale(1);
+  }
+}

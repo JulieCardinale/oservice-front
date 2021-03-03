@@ -1,0 +1,202 @@
+/* * * * * * * * * * * * *
+* o'service button basic *
+*/ 
+.oservice-button-basic {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 1rem,
+    $button-width-small: 100%,
+    );
+
+}
+
+/* * * * * * * * * * * * *
+* o'service button small *
+*/ 
+.oservice-button-small {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 0.5rem,
+    $button-width-small: 100%,
+    );
+}
+
+/* * * * * * * * * * * * *
+* o'service button pop-up *
+*/ 
+.oservice-button-pop-up {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 1rem,
+    $button-width-large: 120px,
+    $button-width-small: 100%,
+    );
+
+}
+
+/* * * * * * * * * * * * *
+* o'service button message *
+*/ 
+.oservice-button-first-message {
+
+  @include button(
+    $button-font-size-large: 1rem,
+    $button-font-size-small: 0.8rem,
+    $button-padding: 0.5rem,
+    $button-width-small: 100%,
+    $button-background-color: $second-color,
+    $button-hover-color: $first-color,
+    );
+
+    @include margin($bottom: $gutter);
+
+}
+
+/* * * * * * * * * * * * * * * * * * *
+* o'service button conversation form *
+*/ 
+.oservice-button-conversation-form {
+
+  @include button(
+    $button-font-size-large: 2rem,
+    $button-font-size-small: 1.5rem,
+    $button-padding: 0,
+    $button-width-large: 50px,
+    $button-width-small: 55px,
+    $button-color: $first-color,
+    $button-background-color: white,
+    $button-hover-color: $second-color,
+    );
+
+    @include margin($left: 0.6rem, $bottom: 1.4rem);
+
+}
+
+/* * * * * * * * * * * * *
+* o'service button close *
+*/ 
+.oservice-button-close {
+
+    @include flex(center, center, row);
+    color: $first-color;
+    border: none;
+    font-weight: 700;
+    font-size: 1.5rem;  
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    padding: 0.8rem;
+    transition: color 400ms ease-in-out;
+    background-color: $background-color;
+
+    &:hover {
+
+      cursor: pointer;
+      color: $second-color;
+
+    }  
+
+}
+
+
+/* * * * * * * * * * * * * * * * * *
+* o'service button messaging header *
+*/ 
+.oservice-button-messaging-header {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 0.5rem,
+    $button-width-small: 100%,
+    $button-background-color:$second-color,
+    $button-hover-color: $first-color,
+    );
+
+    @media #{$messaging-small} {
+      display: none;
+    }
+
+}
+
+/* * * * * * * * * * * * * * * *
+* o'service button disconnect *
+*/ 
+.oservice-button-disconnect-desktop {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 1rem,
+    );
+    @media #{$nav-small} {
+      display: none;
+    }
+}
+
+/* * * * * * * * * * * * * * * *
+* o'service button disconnect *
+*/ 
+.oservice-button-disconnect-mobile {
+
+  @include button(
+    $button-font-size-large: 0.8rem,
+    $button-padding: 1rem,
+    $button-width-large: 100%,
+    );
+}
+
+/* * * * * * * * * * * * * * * * * * * * *
+* o'service button options announcements *
+*/ 
+.oservice-button-options-announcements {
+
+  @include flex(space-between, center, column-reverse);
+  @include size(auto, 80px);
+  color: $first-color;
+  font-size: 0.8rem;
+  font-family: $text-font;
+  font-weight: bold;
+  border: none;
+  background-color: rgba($second-color, 0); 
+
+  & svg {
+    font-size: 3.4rem;
+  } 
+  
+  transition: all 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    transform:rotate(-10deg);
+  } 
+
+}
+
+/* * * * * * * * * * * * * * * * * *
+* o'service button options profile *
+*/ 
+.oservice-button-options-profile {
+
+  @extend .oservice-button-options-announcements;
+  color: $first-color;
+  background-color: rgba($background-color, 0); 
+
+  &:hover {
+    cursor: pointer;
+    color: $second-color;
+    transform:rotate(-10deg);
+  } 
+
+}
+
+
+
+
+
+
+
+
+

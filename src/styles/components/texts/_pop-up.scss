@@ -1,0 +1,88 @@
+
+/* * * * * * * * * 
+* oservice pop up *
+*/ 
+.pop-up {
+
+  @include flex(center, center, row);
+  @include size(100%, 100vh);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(19, 96, 137, 0.5);
+
+  &__window {
+
+    @include flex(space-evenly, normal, column);
+    @include size(500px, 200px);
+
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 3;
+    background-color: $background-color;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    animation: 600ms ease-in-out windowScale;
+    text-align: center;
+
+    @media #{$small} { @include size(90%, 280px) }
+
+  }
+
+  &__messages {
+
+    @include margin($bottom: $gutter/2);
+ 
+  }
+
+  &__buttons {
+
+    @include flex(space-evenly, normal, row);
+
+
+    @media #{$small} {
+
+      @include flex(space-between, normal, column);
+      @include size(100%, 110px);
+
+    }
+
+  }
+}
+
+/* * * * * * * * * * * * * * 
+* oservice pop up animation *
+*/ 
+@keyframes windowScale {
+  from {
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  75%{
+    transform: scale(0.95);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * *
+* oservice pop up react transition group *
+*/ 
+.pop-up-transition-enter {
+  opacity: 0;
+}
+.pop-up-transition-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+.pop-up-transition-exit {
+  opacity: 1;
+}
+.pop-up-transition-exit-active {
+  opacity: 0;
+  transition: opacity 400ms;
+}

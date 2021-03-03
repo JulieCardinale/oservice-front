@@ -1,0 +1,506 @@
+/* * * * * * * * * * * 
+* O'Service text basic *
+*/ 
+.oservice-text-basic {
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+    );
+
+    @include margin($bottom: $gutter);
+}
+
+/* * * * * * * * * * * 
+* O'Service text list *
+*/ 
+.oservice-text-list {
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem, 
+    );
+
+    @include size(100%, inerit);
+
+}
+
+/* * * * * * * * * * * *
+* O'Service text label *
+*/ 
+.oservice-text-label {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem, 
+        $color: $second-color,
+        $isBold: true,
+    );
+
+    @include margin($bottom: $gutter/2, $right: 0.4rem);
+    
+}
+
+/* * * * * * * * * * * *
+* O'Service text pop up *
+*/ 
+.oservice-text-pop-up {
+    
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $align: center, 
+    );
+
+}
+
+/* * * * * * * * * * * * * * * 
+* O'Service text main message *
+*/ 
+.oservice-text-main-message {
+
+    &--line01 {
+
+        @include text(
+
+            $font-size-large: 1.3rem, 
+            $font-size-small: 1rem, 
+            $align: center,
+
+        );
+
+        @include margin($bottom: $gutter/4);
+
+    }
+
+    &--line02 {
+
+        @include text(
+
+            $font-size-large: 0.8rem, 
+            $font-size-small: 0.75rem,
+            $color: $second-color,
+            $align: center,
+
+        );
+
+        @include margin($bottom: 4rem);
+
+    }
+
+    &--line02-my-announcements {
+
+        @include text(
+
+            $font-size-large: 0.8rem, 
+            $font-size-small: 0.75rem,
+            $color: $second-color,
+            $align: center,
+
+        );
+
+        @include margin($bottom: 1.4rem);
+       
+    }
+
+    &--line02-my-announcements-empty {
+
+        @include text(
+
+            $font-size-large: 0.8rem, 
+            $font-size-small: 0.75rem,
+            $color: $second-color,
+            $align: center,
+
+        );
+
+        @include margin($bottom: 2rem);
+       
+    }
+
+    &--line02-messaging-empty {
+
+        @include text(
+
+            $font-size-large: 0.8rem, 
+            $font-size-small: 0.75rem,
+            $color: $second-color,
+            $align: center,
+
+        );
+
+        @include margin($bottom: 0);
+       
+    }
+  
+}
+
+/* * * * * * * * * * * * * * * * *
+* O'Service text navigation link *
+*/
+.oservice-text-navigation-link {
+
+    @include text(
+        $font-size-large: 1.1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isAnchor: true,
+        $isBold: true,
+        $anchorHoverColor: $first-color,
+    );
+
+}
+
+/*--------- SUCCESS MESSAGE ----------- */
+
+/* * * * * * * * * * * * * * * 
+* O'Service text success title *
+*/ 
+.oservice-text-success-title {
+
+    @include text(
+        $font-size-large: 1.6rem, 
+        $font-size-small: 1.3rem, 
+        $color: $second-color,
+        $isBold: true,
+    );
+
+    @include margin($bottom: $gutter/2);
+  
+}
+
+/* * * * * * * * * * * * * * * 
+* O'Service text success icon *
+*/ 
+.oservice-text-success-icon {
+
+    @include text(
+        $font-size-large: 2.5rem, 
+        $font-size-small: 2rem, 
+        $color: $second-color,
+    );
+  
+}
+
+/* * * * * * * * * * * * * * * * *
+* O'Service text success content *
+*/ 
+.oservice-text-success-content {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $second-color,
+        $align: center,
+    );
+
+    @include margin($top: $gutter/2);
+  
+}
+
+/*------------ CONTACT --------------- */
+
+/* * * * * * * * * * * * * * *
+* O'Service text member name *
+*/ 
+.oservice-text-member-name {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $second-color,
+        $isBold: true,
+        $align: center,
+    );
+
+    @include margin($top: $gutter/2);
+  
+}
+
+/* * * * * * * * * * * * * * *
+* O'Service text member job *
+*/ 
+.oservice-text-member-job {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $first-color,
+        $align: center,
+    );
+
+    @include margin($bottom: $gutter/2);
+  
+}
+
+/*------------- 404 --------------- */
+
+/* * * * * * * * * * *
+* O'Service text 404 *
+*/ 
+.oservice-text-404 {
+
+    @include text(
+        $font-size-large: 10rem, 
+        $color: $first-color,
+        $isBold: true,
+    );
+    
+    @include margin($bottom: $gutter);
+  
+}
+
+/*----------- ANNOUNCEMENTS ------------- */
+
+/* * * * * * * * * * * * * * * 
+* O'Service text card title  *
+*/ 
+.oservice-text-card-title {
+
+    @include text(
+        $font-size-large: 1.2rem, 
+        $font-size-small: 1rem, 
+        $color: $second-color,
+        $isBold: true,
+        $align: left,
+    );
+
+    margin-bottom: $gutter/2 !important;
+
+}
+
+/* * * * * * * * * * * * * * * 
+* O'Service text card excerpt *
+*/ 
+.oservice-text-card-excerpt {
+
+    @include text(
+        $font-size-large: 0.8rem, 
+        $color: $first-color,
+    );
+
+    margin-bottom: $gutter/2 !important;
+
+}
+
+/* * * * * * * * * * * * * * * * 
+* O'Service text card city date *
+*/ 
+.oservice-text-card-city-date {
+
+    @include text(
+        $font-size-large: 0.7rem, 
+        $color: grey,
+    );
+
+}
+
+/* * * * * * * * * * * * * * * * * * * 
+* O'Service announcement option label *
+*/ 
+.oservice-text-announcement-option-label {
+    @include text(
+        $font-size-large: 0.75rem, 
+        $color: $first-color,
+        $isBold: true,
+        $align: center,
+    );
+}
+
+
+/*----------- MESSAGING ------------- */
+
+
+/* * * * * * * * * * * * * * * * *  
+* O'Service text inboxes titles *
+*/ 
+.oservice-text-inboxes-titles {
+
+    @include text(
+        $font-size-large: 1.1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isBold: true,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+    padding: 1rem;
+    background-color: $second-color;
+    border-bottom: 1px solid white;
+}
+
+/* * * * * * * * * * * * * * * * * * * * *
+* O'Service text inbox announcement title *
+*/ 
+.oservice-text-inbox-announcement-name {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isBold: true,
+        $align: left,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+}
+
+/* * * * * * * * * * * * * * * * * * * *  
+* O'Service text inbox recipient name *
+*/ 
+.oservice-text-inbox-recipient-name {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $align: left,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+}
+
+/* * * * * * * * * * * * * * * * * * * *  
+* O'Service text inbox recipient name *
+*/ 
+.oservice-text-inbox-message-date {
+
+    @include text(
+        $font-size-large: 0.7rem, 
+        $font-size-small: 0.6rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isItalic: true,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+* O'Service text inbox number of messages *
+*/ 
+.oservice-text-inbox-number-of-messages {
+    @include text(
+        $font-size-large: 0.8rem, 
+        $font-size-small: 0.6rem, 
+        $line-height-large: 1.5rem,
+        $color: $first-color,
+        $isBold: true,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+    z-index: 2;
+
+    @include margin($bottom: 5px);
+
+    @media #{$nav-small} {
+        @include margin($bottom: 4px);
+    }
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * 
+* O'Service text conversation header announcement *
+*/
+.oservice-text-conversation-header-announcement {
+
+    @include text(
+        $font-size-large: 1.2rem, 
+        $font-size-small: 1rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isBold: true,
+        $isAnchor: true,
+        $align: left,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+    
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
+* O'Service text conversation header recipient *
+*/
+.oservice-text-conversation-header-recipient {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.6rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $isAnchor: true,
+        $align: left,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+    
+}
+
+/* * * * * * * * * * * * * * * * * * * 
+* O'Service text message list content *
+*/ 
+.oservice-text-message-list-content {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $line-height-large: 1.5rem,
+        $color: white,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+}
+
+/* * * * * * * * * * * * * * * * * *
+* O'Service text message list date *
+*/ 
+.oservice-text-inbox-message-list-date {
+
+    @include text(
+        $font-size-large: 0.6rem,
+        $line-height-large: 1.5rem,
+        $color: grey,
+        $isItalic: true,
+        $align: right,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+    );
+
+}
+
+/*----------- INPUTS ------------- */
+
+/* * * * * * * * * * * * * * * 
+* O'Service text input info  *
+*/ 
+.oservice-text-input-info {
+
+    @include text(
+        $font-size-large: 0.8rem, 
+        $font-size-small: 0.6rem, 
+        $color: $first-color,
+        $isItalic: true,
+    );
+
+    @include margin($top: $gutter/4);
+  
+}
+
+/* * * * * * * * * * * * * * * 
+* O'Service text input error  *
+*/ 
+.oservice-text-input-error {
+
+    @include text(
+        $font-size-large: 0.8rem, 
+        $font-size-small: 0.6rem, 
+        $color: $error-color,
+        $isBold: true,
+    );
+
+    @include margin($top: $gutter/5);
+  
+}

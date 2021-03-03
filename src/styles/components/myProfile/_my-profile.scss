@@ -1,0 +1,18 @@
+/* * * * * * * * * * * *
+* o'service my profile *
+*/ 
+.oservice-my-profile {
+
+  @include flex(center, flex-start, row);
+
+  @media #{$small} { @include flex (center, flex-start, column) }
+
+  &__infos {
+
+    @include margin($left: $gutter);
+
+    @media #{$small} { @include margin($left: 0) }
+
+  }
+
+}

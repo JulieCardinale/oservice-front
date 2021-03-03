@@ -1,0 +1,134 @@
+/* * * * * *
+* Imports  *
+*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Pacifico&display=swap');
+@import './libs/reset';
+@import './libs/vars';
+@import './libs/mixins';
+@import './components/announcementDetails/announcement-details-author';
+@import './components/announcementDetails/announcement-details-infos';
+@import './components/announcementDetails/announcement-details';
+@import './components/announcementForm/announcement-form';
+@import './components/announcements/announcements-list';
+@import './components/announcements/announcement';
+@import './components/contact/contact';
+@import './components/contact/team-member';
+@import './components/footer/footer-nav';
+@import './components/footer/footer';
+@import './components/header/burger';
+@import './components/header/header-desktop';
+@import './components/header/header-mobile';
+@import './components/header/header-nav';
+@import './components/header/header';
+@import './components/inputs/inputs';
+@import './components/inputs/picture-loader';
+@import './components/inputs/radio-group';
+@import './components/inputs/select';
+@import './components/messaging/conversation-form';
+@import './components/messaging/conversation-header';
+@import './components/messaging/conversation-message';
+@import './components/messaging/conversation-messages-list';
+@import './components/messaging/conversation';
+@import './components/messaging/first-contact-form';
+@import './components/messaging/inbox-message';
+@import './components/messaging/inboxes';
+@import './components/messaging/messaging';
+@import './components/myProfile/my-profile-options';
+@import './components/myProfile/my-profile';
+@import './components/texts/category-tag';
+@import './components/texts/information';
+@import './components/texts/pop-up';
+@import './components/texts/quotes';
+@import './components/texts/success-message';
+@import './components/texts/texts';
+@import './components/texts/title-sub';
+@import './components/texts/title';
+@import './components/announcement-options';
+@import './components/auth-form';
+@import './components/buttons';
+@import './components/error-404';
+@import './components/images';
+@import './components/last-announcements';
+@import './components/navigation-link';
+@import './components/unconnected-home';
+@import './components/user-form';
+@import './components/user-profile';
+
+/* * * * *
+* Body  *
+*/
+body {
+  font-family: $text-font;
+  min-height: 100vh;
+  word-break: break-word;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* Active only when MenuFullScreen is displayed, disable scroll mode. *
+*/ 
+.body-overflow--hidden {
+  @media #{$nav-small} {
+    overflow: hidden;
+  }
+}
+
+/* * * * *
+* Main  *
+*/
+main {
+  @include margin($left: auto, $right: auto, $bottom: $gutter, $top: $gutter);
+  @include size(90%, inerit);
+  @include flex(normal, center, column);
+  min-height: 70vh;
+  text-align: left;
+}
+
+/* * * * * * * * * * * * * * * *
+* changer flex behavior on main *
+*/
+.main-flex-center {
+  @include flex(center, center, column);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * *
+* Active only when isVisibleConversation on mobiles *
+*/ 
+.main-min-height--none {
+  @media #{$messaging-small} {
+    min-height: 0;
+  }
+}
+
+/* * * * * * *
+* O'Service  *
+*/
+.oservice{
+  display: flex;
+  flex-direction: column;
+  margin : auto;
+  background-color: $background-color;
+  min-height: 100vh;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
+* Fake input, only to focus in case of errors  *
+*/
+.fake-input {
+  position: absolute;
+  z-index: -1;
+  height: 0;
+  border: none;
+  width: 0;
+  background-color: $background-color;
+}
+
+/* * * * * * * * * * * *
+* O'service links hover *
+*/
+a {
+  &:hover {
+    color: $second-color;
+  }
+}

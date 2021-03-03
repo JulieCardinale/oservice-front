@@ -1,0 +1,41 @@
+/* * * * * * * * * * * * * * * * * * * * 
+* o'service announcement details infos *
+*/ 
+.oservice-announcement-details-infos {
+
+  @include flex(normal, normal, row);
+  
+  align-self: flex-start;
+
+  @media #{$small} { 
+
+    @include flex(normal, normal, column);
+    align-self: center;
+    width: 100%;
+
+  }
+
+  &__title-category-description-message-button {
+
+    @include margin($left : $gutter);
+    @media #{$small} { @include margin($left : 0) };
+
+  }
+
+  &__button-icon {
+
+    @include margin($left : $gutter/4);
+    
+  }
+
+  &__picture-date-postcode-city {
+
+    order : -1;
+
+    @media #{$small} {
+      order : 1;
+      @include flex(normal, normal, column);
+      @include size(100%, inerit);
+    }
+  }
+}

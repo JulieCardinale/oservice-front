@@ -1,0 +1,16 @@
+/* * * * * * * * * * * *
+* o'service auth form  *
+*/ 
+.oservice-auth-form {
+
+@include flex(space-between, center, row);
+@include size(700px, inerit);
+
+  @media #{$nav-small} { 
+    
+    @include flex(space-evenly, center, column);
+    @include size(98%, inerit);
+    @include margin($auto: true);
+
+    }
+}

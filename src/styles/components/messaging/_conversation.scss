@@ -1,0 +1,28 @@
+/* * * * * * * * * * * *
+* oservice conversation *
+*/ 
+.oservice-conversation {
+
+  @include size(65%, inerit);
+
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+
+  @media #{$messaging-small} {  
+
+    display: none;
+  
+    &--show {
+
+      display: block;
+      @include size(100%, 100vh);
+      position: absolute;
+      top: 0;
+      z-index: 5;
+
+    }
+
+  }
+
+}

@@ -1,0 +1,93 @@
+/* * * * * * * * *
+* oservice burger *
+*/ 
+
+/* Variables of the burger icon */
+$burger-main-color: white;
+$burger-hover-color: $first-color;
+$size: 50px;
+
+/* One line styles */
+@mixin line(){
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 12%;
+  background: $burger-main-color;
+  border-radius: $size;
+  transition: all .5s cubic-bezier(.1, .9, 0, 1.2);
+}
+
+/* wrapper styles */
+.wrapper {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: 25px;
+  right: 20px;
+  width: $size;
+  height: $size;
+  @media #{$nav-small} {
+    display: block;
+  }
+ 
+  /* Create 3 lines */
+  .bun {
+    &:before{
+      @include line();
+      top: 10%;
+      right:0;
+    }
+
+    &:after{
+      @include line();
+      bottom: 10%;
+      left:0;
+    }
+
+    .burger {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: $size;
+      width: $size;
+      &:before, &:after{
+        @include line();
+      }
+    }
+  }
+   
+  /* Transitions */
+  input {
+    display:block;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    width:$size;
+    height:$size;
+    cursor:pointer;
+    
+    &:hover ~ .bun{
+      &:before, &:after, :before, :after{
+        background: $burger-hover-color;
+      }
+    }
+    
+    &:checked ~ .bun{
+      &:before, &:after{
+        width:0;
+      }
+
+      .burger{
+        &:before{
+          transform:rotate(135deg);
+        }
+        &:after{
+          transform:rotate(45deg);
+          box-shadow:0 0 0 0 lighten($burger-main-color,35);
+        }
+      }
+    }
+  }
+}
+

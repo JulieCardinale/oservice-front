@@ -1,0 +1,15 @@
+/* * * * * * * * * * * 
+* oservice header nav *
+*/ 
+.oservice-header-nav {
+
+  @include size(750px, inerit);
+  @include flex(space-evenly, center, row);
+
+  @media #{$nav-small} {  
+
+    @include flex(space-around, center, column);
+    @include size(700px, 50vh);
+
+  }
+}

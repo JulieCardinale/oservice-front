@@ -1,0 +1,33 @@
+/* * * * * * * * *
+* oservice header *
+*/ 
+.header {
+
+  &__mobile-transition-enter {
+
+    @include translate(Y, -100%);
+
+  }
+
+  &__mobile-transition-enter-done {
+
+    @include translate(Y, 0);
+    transition: transform 1000ms;
+
+  }
+
+  &__mobile-transition-exit {
+
+    @include translate(Y, 0);
+
+  }
+
+  &__mobile-transition-exit-done {
+
+    @include translate(Y, -100%);
+    transition: transform 1000ms;
+
+  }
+
+}
+

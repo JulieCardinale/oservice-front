@@ -1,0 +1,64 @@
+/* * * * * * * * * * * *
+* o'service input basic *
+*/ 
+.oservice-input-basic {
+  @include input();
+}
+
+/* * * * * * * * * * * * * *
+* o'service input password *
+*/ 
+.oservice-input-password {
+  @include input($hasPasswordIcon : true);
+}
+
+/* * * * * * * * * * * * * * * *
+* o'service input auth password *
+*/ 
+.oservice-input-auth-password {
+  @include input(
+    $hasPasswordIcon : true,
+    $passwordIconColor: white,
+    $passwordIconBackgroundColor: $second-color,
+    $passwordIconHoverColor:$first-color,
+    $inputWidthLarge: 250px,
+    $inputWidthSmall: 100%,
+    $custom-breakpoint-small: $project-breakpoint-nav-small,
+    );
+}
+
+/* * * * * * * * * * * * * * *
+* o'service input auth email *
+*/ 
+.oservice-input-auth-email {
+  @include input(
+    $inputWidthLarge: 250px,
+    $inputWidthSmall: 100%,
+    $custom-breakpoint-small: $project-breakpoint-nav-small,
+    );
+}
+
+/* * * * * * * * * * * * * * * * *
+* o'service input password valid *
+*/ 
+.oservice-input-password-valid {
+
+  @include input($hasPasswordValidation: true);
+
+}
+
+/* * * * * * * * * * * * * * * * * *
+* o'service input conversation form *
+*/ 
+.oservice-input-conversation-form {
+
+  @include input(
+    $inputHeightLarge: 70px,
+    $inputPadding: 0,
+    $inputRadius: 0,
+    $inputHasShadow: false,
+    $inputHasFocus: false,
+  );
+
+}
+

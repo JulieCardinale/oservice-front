@@ -1,0 +1,59 @@
+/* * * * * * * * * * * *
+* oservice radio group *
+*/ 
+.oservice-radio-group {
+  
+    @include size(100%, inerit);
+    color: $first-color;
+    @include margin($bottom: $gutter/2);
+
+    &__title {
+
+       @include margin($top: $gutter/2, $bottom: $gutter/2);
+
+       @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $second-color,
+        $isBold: true,
+    );
+       
+    }
+
+    &__choices {
+
+     @include flex(space-between, center, row);
+
+     @include margin($bottom: $gutter/3);
+
+     @include text(
+      $font-size-large: 1rem, 
+      $font-size-small: 0.8rem, 
+      $color: $first-color,
+    );
+
+     @media #{$small} {  
+
+      @include flex(flex-start, flex-start, column);
+      @include size(inerit, 80px);
+
+      }
+
+    }
+
+    &__choice {
+
+        @media #{$small} {  
+
+          @include size(100%, inerit);
+          @include margin($bottom: $gutter/2);
+
+       }
+    }
+
+    &__label {
+
+      @include margin($left: $gutter/2);
+
+    }
+  } 

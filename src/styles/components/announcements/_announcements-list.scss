@@ -1,0 +1,16 @@
+/* * * * * * * * * * * * * * *
+* o'service announcement list *
+*/ 
+.oservice-announcements-list {
+
+  @include size(100%,inerit);
+  @include margin($bottom: $gutter, $top: $gutter);
+  @include flex(center, center, row);
+
+  flex-wrap: wrap;
+
+  &:focus{
+    outline: none;
+  }
+
+}

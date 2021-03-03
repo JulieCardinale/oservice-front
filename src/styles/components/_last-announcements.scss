@@ -1,0 +1,19 @@
+/* * * * * * * * * * * * * * * *
+* o'service last announcements *
+*/ 
+.oservice-last-announcements {
+
+  @include size(100%, inerit);
+  @include flex(center, center, column);
+
+  &__filters {
+
+    @include flex(space-around, normal, row);
+    @include size(100%, inerit);
+
+    @media #{$small} { @include flex(space-around, normal, column) }
+
+  }
+
+}
+

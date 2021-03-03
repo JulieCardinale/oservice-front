@@ -1,0 +1,32 @@
+/* * * * *
+* COLORS *
+*/ 
+$background-color: #f2f2f2;
+$first-color: #136089;
+$second-color: #03bc82; 
+$anchor-hover-color: #03bc82; 
+$error-color: #cc2200;
+
+/* * * *
+* FONTS *
+*/ 
+$title-font: 'Pacifico', cursive;
+$text-font: 'Nunito', sans-serif;
+
+/* * * * *
+* GUTTER *
+*/ 
+$gutter: 2rem;
+
+/* * * * * * *
+* BREAKPOINTS *
+*/ 
+$project-breakpoint-cards-small: 400px;
+$project-breakpoint-messaging-small: 1005px;
+$project-breakpoint-nav-small: 995px;
+$project-breakpoint-small: 750px;
+
+$cards-small: "screen and (max-width: #{$project-breakpoint-cards-small})";
+$messaging-small: "screen and (max-width: #{$project-breakpoint-messaging-small})";
+$nav-small: "screen and (max-width: #{$project-breakpoint-nav-small})";
+$small: "screen and (max-width: #{$project-breakpoint-small})";

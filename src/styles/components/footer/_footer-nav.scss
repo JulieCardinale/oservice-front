@@ -1,0 +1,16 @@
+/* * * * * * * * * * *
+* oservice footer nav *
+*/ 
+.oservice-footer-nav {
+
+  @include size(50%, inerit);
+  @include flex(space-around, center, row);
+
+  @media #{$nav-small} {
+
+    @include size(100%, inerit);
+    @include flex(space-evenly, center, row);
+
+  }
+
+};

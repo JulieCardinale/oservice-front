@@ -1,0 +1,94 @@
+/* * * * * * * * *
+* oservice select *
+*/ 
+.oservice-select {
+  @include size(100%, 105px);
+  @include margin($top: $gutter/2);
+  font-size: 1rem;
+  position: relative;
+
+  @media #{$small} {
+    width: 100%!important;
+    font-size: 0.8rem;
+  }
+
+  &__label {
+    @include margin($bottom: $gutter/2);
+    color: $second-color;
+    font-weight: 700;
+  }
+
+  &__select {
+    @include size(100%, inerit);
+    @include flex(space-between, center, row);
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    color: $first-color;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 5px grey);
+
+    &:focus{
+      outline: none;
+    }
+    
+  }
+
+  &__options-list {
+    @include size(100%, inerit);
+    position: absolute;
+    top: 90px;
+    z-index: 2;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+    overflow: auto;
+    filter: drop-shadow(1px 1px 5px grey);
+    color: white;
+    @media #{$small} {
+      top: 80px;;
+    }
+  }
+
+  &__options-list--visible {
+    opacity: 1;
+    visibility: visible;
+    overflow: auto;
+  } 
+
+  &__option {
+  padding: 1rem;
+  color: $first-color;
+    &:hover {
+      background-color: $first-color;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * *
+* oservice select scroll bar *
+*/ 
+#options-list::-webkit-scrollbar-track {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+	background-color: $second-color;
+}
+#options-list::-webkit-scrollbar {
+  @include size(12px, inerit);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: $second-color;
+}
+#options-list::-webkit-scrollbar-thumb {
+  @include size(12px, inerit);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+	background-color: $second-color;
+}

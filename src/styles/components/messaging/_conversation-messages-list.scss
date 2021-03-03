@@ -1,0 +1,18 @@
+/* * * * * * * * * * * * * * * * * * *
+* oservice conversation message list *
+*/ 
+.oservice-conversation-messages-list {
+
+  background-color: white;
+  padding: 1.5rem;
+  min-height: 65vh;
+
+  @media #{$messaging-small} {  
+
+    min-height: 60vh;
+
+    }
+
+}
+
+

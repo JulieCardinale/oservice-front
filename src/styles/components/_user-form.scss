@@ -1,0 +1,43 @@
+/* * * * * * * * * * *
+* o'service user form *
+*/ 
+.oservice-user-form {
+
+  @include flex(center, center, column);
+  @include size(60%, inerit);
+
+  @media #{$small} { @include size(100%, inerit) }
+
+}
+/* * * * * * * * * * * * * * * * *
+* o'service user form date input *
+*/ 
+input[type=date] {
+  width: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+* o'service user form description scrollbar *
+*/ 
+#userFormDescription::-webkit-scrollbar-track {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+	background-color: $second-color;
+}
+
+#userFormDescription::-webkit-scrollbar {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 12px;
+  background-color: $second-color;
+}
+#userFormDescription::-webkit-scrollbar-thumb {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  width: 12px;
+	background-color: $first-color;
+}
+
+

@@ -1,0 +1,20 @@
+/* * * * * * * * * * * * * * 
+* o'service contact members *
+*/ 
+.oservice-contact-members {
+
+  @include flex(center, normal, row);
+
+  &:first-of-type {
+    @include margin($bottom: $gutter);
+  }
+
+  @media #{$small} {
+
+    @include flex(center, center, column);
+    @include size(100%, inerit);
+
+  
+  }
+
+}

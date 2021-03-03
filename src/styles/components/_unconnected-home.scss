@@ -1,0 +1,12 @@
+/* * * * * * * * * * * * * *
+* O'service unconnected home *
+*/ 
+.oservice-unconnected-home {
+
+  @include flex(center, center, column);
+
+  @media #{$small} {
+    @include flex(center, normal, column);
+  }
+
+}

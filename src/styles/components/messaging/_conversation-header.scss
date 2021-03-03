@@ -1,0 +1,60 @@
+/* * * * * * * * * * * * * * * *
+* oservice conversation header *
+*/ 
+.oservice-conversation-header {
+
+  @include size(inerit, 100px);
+  @include flex(space-between, normal, row);
+  background-color: $first-color;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+  border-top: 1px solid $first-color;
+  border-right: 1px solid $first-color;
+  border-left: 1px solid white;
+  border-top-right-radius: 10px;
+
+  @media #{$messaging-small} {  
+    
+    border: none;
+
+  }
+
+  @media #{$messaging-small} {  
+
+    border-radius: 0;
+
+  }
+
+  &__left-block {
+
+    @include flex(center, center, row);
+
+  }
+
+  &__left-block-icon {
+
+    display: none;
+
+    @media #{$messaging-small} {  
+
+      @include margin($right: 0.5rem);
+      display: block;
+      color: white;
+      font-size: 3rem;
+    
+      &:hover {
+        cursor: pointer;
+        color: $second-color;
+      }
+
+    }
+
+  }
+
+  &__right-block {
+
+    @include flex(normal, center, row);
+
+  }
+
+}

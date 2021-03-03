@@ -1,0 +1,60 @@
+
+/* * * * * * * * * * *
+* ANNOUNCEMENT SIZE  *
+*/ 
+%cards-size {
+
+  @include size(300px, 400px);
+
+  @media #{$cards-small} {
+    @include size(100%, 400px);
+  }
+
+}
+
+/* * * * * * * * * * * * * *
+* o'service announcement  *
+*/ 
+.oservice-announcement {
+
+  @extend %cards-size;
+  @include flex(space-between, normal, column);
+  
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+  padding: 1rem;
+  margin: 10px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+  }
+
+  &__content {
+
+    @include flex(space-between, normal, column);
+    @include size(100%, 100%);
+    padding-top: 0;
+
+  }
+
+  &__city-date {
+      @include flex(space-between, normal, row);
+  }
+
+  &__link {
+      @extend %cards-size;
+      position: absolute;
+      top:0,
+  }
+
+  @media #{$cards-small} {
+    @include margin($bottom: $gutter);
+  }
+
+}
+

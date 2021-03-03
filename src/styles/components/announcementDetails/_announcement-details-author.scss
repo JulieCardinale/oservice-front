@@ -1,0 +1,19 @@
+/* * * * * * * * * * * * * * * * * * * * 
+* o'service announcement details author *
+*/ 
+.oservice-announcement-details-author {
+
+  @include flex(space-between, center, column);
+
+  align-self: flex-end;
+  
+  @media #{$small} { 
+    @include size(100%, inerit);
+    // No center because of the button.
+    @include flex(space-between, normal, column);
+    // text label
+    & div {
+      align-self: center;
+    }
+  }
+}

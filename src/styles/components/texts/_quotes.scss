@@ -1,0 +1,32 @@
+/* * * * * * * * * * * * * * * *
+* oservice text between quotes *
+*/ 
+.oservice-quotes {
+
+    @include margin($bottom: $gutter);
+
+    &__quote {
+
+        font-family: $title-font;
+        color : $second-color;
+        font-weight: bold;
+        display: block;
+        font-size: 2rem;
+
+    }
+
+    &__quote-start {
+
+        text-align: left;
+        margin-top: $gutter;
+
+    }
+
+    &__quote-end {
+
+        text-align: right; 
+        @include margin($top: $gutter / 2);
+
+    }
+
+}

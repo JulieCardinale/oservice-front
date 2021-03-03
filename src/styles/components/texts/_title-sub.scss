@@ -1,0 +1,32 @@
+/* * * * * * * * * * * * * *
+* O'service title sub basic *
+*/ 
+.oservice-title-sub-basic {
+    @include text (
+        $font-family: $title-font,
+        $color: $first-color,
+        $font-size-large: 2rem,
+        $font-size-small: 1.5rem,
+        $line-height-large: $gutter,
+        $align: left,
+    );
+
+    @include margin($bottom: $gutter);
+    @include size(100%, inerit);
+
+}
+
+/* * * * * * * * * * * * * * * *
+* O'service title sub messaging *
+*/ 
+.oservice-title-sub-messaging {
+    @extend .oservice-title-sub-basic;
+    @include flex(center, center, row);
+    @include size(inerit, 100px);
+    color: white;
+    padding: $gutter;
+    margin-bottom: 0;
+    border-bottom: 1px solid white;
+}
+
+

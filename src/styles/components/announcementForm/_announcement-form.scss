@@ -1,0 +1,36 @@
+/* * * * * * * * * * * * * * *
+* o'service announcement form *
+*/ 
+.oservice-announcement-form {
+
+  @include flex(center, center, column);
+  @include size(60%, inerit);
+
+  @media #{$small} { @include size(100%, inerit) }
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * *
+* o'service announcement form scroll bar *
+*/ 
+#announcementFormDescription::-webkit-scrollbar-track {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+	background-color: $second-color;
+}
+
+#announcementFormDescription::-webkit-scrollbar {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 12px;
+  background-color: $second-color;
+}
+
+#announcementFormDescription::-webkit-scrollbar-thumb {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  width: 12px;
+  background-color: $second-color;
+}

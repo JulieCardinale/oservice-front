@@ -1,0 +1,10 @@
+/* * * * * * * * *
+* oservice footer *
+*/ 
+.oservice-footer {
+  @include flex(center, center, row);
+  @include size(100%, 60px);
+  padding: 1rem;
+  background-color: $second-color;
+  @include margin($top: $gutter)
+}

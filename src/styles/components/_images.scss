@@ -1,0 +1,192 @@
+/* * * * * * * *
+* o'service logo *
+*/ 
+.oservice-logo {
+
+    @include image($width-large: 85px);
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    z-index: 5;
+
+}
+
+
+
+/* * * * * * * * * * * * * * * *
+* o'service announcement author *
+*/ 
+.oservice-loader {
+
+    @include image($width-large: 250px, $width-small: 100px);
+    z-index: 3;
+    
+}
+
+/* * * * * * * * * * * * * * *
+* o'service team member image *
+*/ 
+.oservice-team-member-image {
+
+    @include image($width-large: 170px);
+    align-self: center;
+
+}
+
+/* * * * * * * * * * *
+* o'service 404 image *
+*/ 
+.oservice-404-image {
+
+    @include image($width-large: 120px);
+
+    animation: 2500ms infinite imageRotate;
+
+    @keyframes imageRotate {
+        from {
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(400deg);
+        }
+        75%{
+            transform: rotate(340deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * *
+* o'service announcement card image *
+*/ 
+.oservice-announcement-card-image {
+
+    @include image($width-large: 100%, $height-large: 160px);
+    @include margin($bottom: $gutter /2);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+/* * * * * * * * * * * * *
+* o'service square image *
+*/ 
+.oservice-square-image {
+
+    @include image($width-large: 320px, $height-large:290px, $width-small: 100%, $radius: 20px, $imageHasShadow: true);
+    @include margin($bottom: $gutter);
+    
+}
+
+/* * * * * * * * * * * * * * * * * * *
+* o'service rounded image user profile *
+*/ 
+.oservice-rounded-image-user-profile {
+
+    @include image(
+
+        $width-large: 300px, 
+        $height-large:300px, 
+        $width-small: 200px, 
+        $height-small: 200px, 
+        $radius: 50%, 
+        $imageHasShadow: true
+
+    );
+
+    @include margin($bottom: $gutter);
+    
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * *
+* o'service rounded image announcement author *
+*/ 
+.oservice-rounded-image-announcement-author {
+
+    @include image($width-large: 150px, $height-large:150px, $radius:50%, $imageHasShadow: true);
+    @include margin($bottom: $gutter);
+    
+    @media #{$small} {
+        align-self: center;
+    }
+}
+
+/* * * * * * * * * * * * * * * *
+* o'service rounded image inbox *
+*/ 
+.oservice-rounded-image-inbox {
+
+    @include image(
+        $width-large: 80px, 
+        $height-large: 80px, 
+        $width-small: 60px, 
+        $height-small: 60px, 
+        $radius:50%, 
+        $imageHasShadow: true,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+        );
+
+    @include margin($right: $gutter/2);
+    
+    
+}
+
+
+/* * * * * * * * * * * * * * * * * * * *
+* o'service rounded image message list *
+*/ 
+.oservice-rounded-image-messages-list {
+
+    @include image(
+        $width-large: 55px, 
+        $height-large:55px, 
+        $radius:50%, 
+        $imageHasShadow: true,
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+        );
+
+    &:hover {
+        cursor: pointer;
+    }
+    
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+* o'service rounded image messaging header *
+*/ 
+.oservice-rounded-image-messaging-header {
+
+    @include image(
+        $width-large: 70px, 
+        $height-large: 70px, 
+        $width-small: 55px, 
+        $height-small: 55px, 
+        $radius:50%, 
+        $custom-breakpoint-small: $project-breakpoint-messaging-small,
+        );
+
+    @include margin($right: $gutter/2);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media #{$nav-small} {
+        @include margin($right: 0);
+    
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

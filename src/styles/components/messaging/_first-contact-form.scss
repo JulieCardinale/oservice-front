@@ -1,0 +1,77 @@
+/* * * * * * * * * * * * * * *
+* oservice first contact form *
+*/ 
+.oservice-first-contact-form {
+
+  z-index: 6;
+
+  &__background {
+
+    @include size(100%, 100vh);
+    @include flex(center, center, row);
+    position: fixed;
+    top: 0;
+    left: 0; 
+    background-color: rgba(19, 96, 137, 0.5);
+
+  }
+
+  &__form-box {
+
+    @include size(600px, inerit);
+    @include flex(space-evenly, center, column);
+    max-height: 100vh;
+    position: relative;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    background-color: $background-color;
+    animation: 600ms ease-in-out windowScaleHelpForm;
+
+    @media #{$small} {
+
+      @include size(90%, inerit);
+
+    }
+  }
+
+}
+
+/* * * * * * * * * * * * * * * * * * * *
+* oservice first contact form animation *
+*/ 
+@keyframes windowScaleHelpForm {
+  from {
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  75%{
+    transform: scale(0.95);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* oservice first contact form animation CSS transition *
+*/ 
+.first-contact-form-transition-enter {
+  opacity: 0;
+}
+/* formHelpItem -> is mounted */
+.first-contact-form-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+/* formHelpItem -> is unmounting */
+.first-contact-form-transition-exit {
+  opacity: 1;
+}
+/* formHelpItem -> is unmounted */
+.first-contact-form-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

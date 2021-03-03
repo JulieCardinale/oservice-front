@@ -1,0 +1,31 @@
+/* * * * * * * * * * * * * *
+* o'service picture loader *
+*/ 
+.oservice-picture-loader {
+  @include size(213px, 193px);
+  @include flex(center, center, row);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid white;
+  background-image: url("../../../images/picture_loader_image.svg");
+  background-size: cover;
+  background-position: center;
+  filter: drop-shadow(1px 1px 5px grey);
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    filter: none;
+    cursor: pointer;
+    background-image: url("../../../images/picture_loader_image_hover.svg");
+  }
+}
+
+input[type='file']{
+  @include size(400px, 400px);
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+
+
+

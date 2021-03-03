@@ -1,0 +1,419 @@
+/* * * * * * * *
+* * Image mixin *
+*
+* @description : A mixin for all image components.
+*
+* @args ----------------------------------------------------------------------------------
+* - $width-large               => Image width for large screens
+* - $width-small               => Image width for small screens (default: $width-large) 
+* - $height-large              => Image height for large screens
+* - $height-small              => Image height for small screens (default: $height-large)
+* - $radius                    => Image border radius (default: 0 0 0 0) (doc: TL TR BL BR)
+* - $fit                       => Image fit (default: fit) (options : fill, contain, cover, none, scale-down)
+* - $custom-breakpoint-small   => Custom small breakpoint (default: $default-custom-breakpoint-small)
+* - $imageHasShadow            => image has shadow or not ? (default: false)
+* -----------------------------------------------------------------------------------------
+*/
+@mixin image
+( 
+    $width-large: '',
+    $width-small: $width-large,
+    $height-large: '',
+    $height-small: $height-large,
+    $radius: 0 0 0 0,
+    $fit: cover,  
+    $custom-breakpoint-small: $project-breakpoint-small,  
+    $imageHasShadow: false,  
+) 
+{  
+    display: block;
+    width: $width-large;
+    height: $height-large;
+    min-width: $width-large;
+    min-height: $height-large;
+    border-radius: $radius;
+    object-fit: $fit;
+
+    @if $imageHasShadow {
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: $custom-breakpoint-small) {
+
+        width: $width-small;
+        height: $height-small;
+        min-width: $width-small;
+        min-height: $height-small;
+
+    }
+}
+
+/* * * * * * * *
+* * Text mixin *
+*
+* @description : A mixin for all image components.
+*
+* @args -------------------------------------------------------------------------------------------------
+* - $font-family                => Font family (default : sans-serif)
+* - $align                      => Text alignement (default: justify)
+* - $color                      => Text color (default: white)
+* - $font-size-large            => Text size large screens (default: normal)
+* - $font-size-small            => Text size small screens (default: $size-large)  
+* - $letter-spacing-large       => Letter spacing large screens (default: 0)
+* - $letter-spacing-small       => Letter spacing small screens (default : $spacing-large)
+* - $line-height-large          => Line height large screens (default: normal)
+* - $line-height-small          => Line height small screens (default: $line-height-large)
+* - $custom-breakpoint-small    => Custom small breakpoint (default: $default-custom-breakpoint-small)
+* - $isUppercase                => Is uppercase ? true, false (default: false)
+* - $isBold                     => Is bold ? true, false (default: false)
+* - $iItalic                    => Is Italic ? true, false (default: false)
+* - $isAnchor                   => Specify if the text is an anchor (default: false)
+* - $isUnderlined               => Specify if the text is underlineded (default: false)
+* - $anchorHoverColor           => Choose hover anchor color (default :  rgb(106, 0, 255))
+* - $anchorFocusColor           => Choose focus anchor color (default : anchorHoverColor)
+* - $anchorVisitedColor         => Choose visited anchor color (default : inerit)
+* -------------------------------------------------------------------------------------------------------
+*/
+@mixin text 
+(
+    $font-family: $text-font,
+    $align: justify,
+    $color: $first-color,
+    $font-size-large: normal,
+    $font-size-small: $font-size-large,
+    $line-height-large: normal,
+    $line-height-small: $line-height-large,
+    $letter-spacing-large: 0,
+    $letter-spacing-small: $letter-spacing-large,
+    $custom-breakpoint-small: $project-breakpoint-small,
+    $isUppercase: false,
+    $isBold: false,
+    $isItalic: false,
+    $isUnderlined: false,
+    $isAnchor: false,
+    $anchorColor: $color,
+    $anchorHoverColor : $anchor-hover-color,
+    $anchorFocusColor : $anchorHoverColor,
+    $anchorVisitedColor:  inerit,
+) {  
+
+    font-family: $font-family;
+    text-align: $align;
+    color: $color;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+    letter-spacing: $letter-spacing-large;
+    word-break: break-word;
+
+    @if $isUppercase {
+        text-transform: uppercase;
+    }
+
+    @if $isBold {
+        font-weight: 700;
+    }
+
+    @if $isItalic {
+        font-style: italic;
+    }
+
+    @if $isUnderlined {
+        text-decoration: underline;
+    }
+
+    @if $isAnchor {
+
+        color: $anchorColor;
+
+        &:hover {
+
+            color: $anchorHoverColor;
+            cursor: pointer;
+
+        }
+
+        &:focus {
+
+            color: $anchorFocusColor;
+
+        }
+
+        &:visited {
+
+            color: $anchorVisitedColor;
+
+        }
+
+    }
+
+    @media screen and (max-width: $custom-breakpoint-small) {
+
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        letter-spacing: $letter-spacing-small;
+
+    }
+
+}
+
+/* * * * * * * *
+* * Marge mixin *
+*
+* @description : A mixin for margin
+*
+* @args ----------------------------------------------------------------------------------
+* - $top       => top space (default 0)
+* - $right     => right space (default 0)
+* - $bottom    => bottom space (default 0)
+* - $left      => left space (default 0)
+* - $auto      => is margin auto ? (default: false)
+* -----------------------------------------------------------------------------------------
+*/
+@mixin margin($top: 0, $bottom: 0, $left: 0, $right: 0, $auto: false) {
+    /* top | right | bottom | left */
+    margin: $top $right $bottom $left;
+    @if $auto { margin: auto }
+}
+
+
+/* * * * * * * *
+* * flex mixin *
+*
+* @description : A mixin for flex
+*
+* @args ----------------------------------------------------------------------------------
+* - $justifyContent => https://developer.mozilla.org/fr/docs/Web/CSS/justify-content#syntaxe
+* - $alignItems     => https://developer.mozilla.org/fr/docs/Web/CSS/align-items#syntaxe
+* - $alignItems     => https://developer.mozilla.org/fr/docs/Web/CSS/flex-direction#syntaxe
+* -----------------------------------------------------------------------------------------
+*/
+@mixin flex($justifyContent, $alignItems, $flexDirection) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+/* * * * * * * *
+* * size mixin *
+*
+* @description : A mixin for size
+*
+* @args ----------------------------------------------------------------------------------
+* - $w => width https://developer.mozilla.org/fr/docs/Web/CSS/width
+* - $h => height https://developer.mozilla.org/fr/docs/Web/CSS/height
+* -----------------------------------------------------------------------------------------
+*/
+@mixin size($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+/* * * * * * * *
+* * button mixin *
+*
+* @description : A mixin for buttons
+*
+* @args ----------------------------------------------------------------------------------
+* - $button-font-size-large     => button font size large
+* - $button-font-size-small     => button font size small
+* - $button-padding             => button padding
+* - $button-width-large         => button width large
+* - $button-width-small         => button width small
+* - $button-family              => button font family
+* - $button-color               => button font color
+* - $button-background-color    => button background color
+* - $button-hover-color         => button hover color
+* - $custom-breakpoint-small    => Custom small breakpoint (default: $default-custom-breakpoint-small)
+* -----------------------------------------------------------------------------------------
+*/
+@mixin button(
+
+    $button-font-size-large: normal,
+    $button-font-size-small: $button-font-size-large,
+    $button-padding: 1rem,
+    $button-width-large: auto,
+    $button-width-small: 100%,
+    $button-family: $text-font,
+    $button-color: white,
+    $button-background-color: $first-color,
+    $button-hover-color: $anchor-hover-color,
+    $custom-breakpoint-small: $project-breakpoint-small,
+    ) 
+    {
+
+    font-size: $button-font-size-large;
+    font-family: $button-family;
+    color: $button-color;
+    background-color: $button-background-color;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: $button-padding;
+    transition: color 400ms ease-in-out;
+    width: $button-width-large;
+ 
+    &:hover { cursor: pointer; color: $button-hover-color }
+
+    @media screen and (max-width: $custom-breakpoint-small) { 
+        font-size: $button-font-size-small;
+        width: $button-width-small;
+    }
+
+}
+
+/* * * * * * * * * * * *
+* * Translate mixin    *
+*
+* @description : A mixin for translates X ou Y
+*
+* @args ----------------------------------------------------------------------------------
+* - $axis               => Choose you axis, Y or X ?
+* - $value              => The value of the translate in %
+* -----------------------------------------------------------------------------------------
+*/
+@mixin translate($axis, $value) {
+
+    @if $axis == 'X' {
+
+        transform: translateX($value);
+
+    }
+
+    @if $axis == 'Y' {
+
+        transform: translateY($value);
+
+    }
+
+}
+
+/* * * * * * * * 
+* * Input mixin *
+*
+* @description : A mixin for inputs
+*
+* @args ----------------------------------------------------------------------------------
+* - $hasPasswordIcon                        => has input password icon ? (Default: false)
+* - $passwordIconColor                      => Password icon color (default: $first-color)
+* - $passwordIconHoverColor                 => Password icon hover color default: $second-color) 
+* - $passwordIconBackgroundColor            => Password background color default: background-color) 
+* - $hasPasswordValidation                  => has input password validation ? (Default: false)
+* - $inputWidthLarge                        => input width large (default 100%)
+* - $inputHeightLarge                       => input height large (default inerit)
+* - $inputWidthSmall                        => input width small (default $inputWidthLarge)
+* - $inputPadding                           => input padding (default 1rem)
+* - $inputRadius                            => input border radius (default 10px)
+* - $inputHasShadow                         => input has shadow ? (default true)
+* - $inputHasFocus                          => input has focus (default true)
+* - $custom-breakpoint-small                => Custom small breakpoint (default: $default-custom-breakpoint-small)
+* -----------------------------------------------------------------------------------------
+*/
+@mixin input(
+  $hasPasswordIcon: false,
+  $passwordIconColor: $first-color,
+  $passwordIconHoverColor: $second-color,
+  $passwordIconBackgroundColor: $background-color,
+  $hasPasswordValidation: false,
+  $inputWidthLarge: 100%,
+  $inputHeightLarge: inerit,
+  $inputWidthSmall: $inputWidthLarge,
+  $inputPadding: 1rem,
+  $inputRadius: 10px,
+  $inputHasShadow: true,
+  $inputHasFocus: true,
+  $custom-breakpoint-small: $project-breakpoint-small,
+  ) {
+
+  @include size($inputWidthLarge, inerit);
+  @include flex(flex-start, normal, column);
+  @include margin($top: $gutter, $bottom: $gutter);
+
+  @media screen and (max-width: $custom-breakpoint-small) {
+    @include size($inputWidthSmall, inerit);
+    }
+
+  &__label {
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $second-color,
+        $isBold: true,
+    );
+    
+    @include margin($bottom: $gutter/2);
+
+  }
+
+  &__input {
+
+    @include size($inputWidthLarge, $inputHeightLarge);
+
+    @include text(
+        $font-size-large: 1rem, 
+        $font-size-small: 0.8rem, 
+        $color: $first-color,
+    );
+
+    border-radius: $inputRadius;
+    padding: $inputPadding;
+    border: none;
+    resize : none;
+
+    @if $inputHasShadow {
+        filter: drop-shadow(1px 1px 5px grey);
+    }
+
+    &:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px white inset;
+    }
+    
+    transition: filter 0.3s ease-in-out;
+ 
+    @if $inputHasFocus {
+
+        &:focus{
+            outline: none !important;
+            border: 2px solid $first-color;
+            filter: none;
+        }
+    }
+
+    &::placeholder{ color: grey }
+
+    @if $hasPasswordValidation {
+      color: $second-color;
+      box-shadow: 3.8px 3.8px $second-color;
+    }
+
+    @media screen and (max-width: $custom-breakpoint-small) {
+        @include size($inputWidthSmall, inerit);
+    }
+  }
+
+  &__password-icon {
+    display: none;
+  }
+
+  @if $hasPasswordIcon {
+
+    &__input-password-icon {
+        @include flex(normal, normal, row);
+    }
+
+    &__password-icon {
+      @include margin($left: 0.5rem);
+      display: block;
+      color: $passwordIconColor;
+      border: none;
+      background-color: $passwordIconBackgroundColor;
+      & :hover {
+        color: $passwordIconHoverColor;
+      }
+    }
+  }
+}
+
+    

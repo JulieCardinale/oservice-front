@@ -1,0 +1,34 @@
+/* * * * * * * * * *
+* oservice inboxes *
+*/ 
+.oservice-inboxes {
+
+  @include size(35%, inerit);
+  overflow: auto;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: $first-color;
+
+  @media #{$messaging-small} {  
+
+    @include size(100%, inerit);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+  }
+
+  &__messages {
+    @media #{$messaging-small} {  
+      &--hide {
+        display: none;
+      } 
+    }
+  }
+
+  &__individual-inbox {
+
+    @include flex(normal, normal, column-reverse);
+
+  }
+
+}

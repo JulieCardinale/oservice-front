@@ -1,0 +1,14 @@
+/* * * * * * * * * * * *
+* O'Service title basic *
+*/ 
+.oservice-title-basic {
+    @include text (
+        $font-family: $title-font,
+        $color: white,
+        $align: center,
+        $font-size-large: 2.5rem,
+        $font-size-small: 1.5rem,
+    );
+}
+
+

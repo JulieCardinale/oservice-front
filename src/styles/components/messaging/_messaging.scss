@@ -1,0 +1,20 @@
+/* * * * * * * * * * 
+* oservice messaging *
+*/ 
+.oservice-messaging {
+
+    @include flex(center, normal, row);
+    @include size(100%, inerit);
+    border-radius: 10px;
+    border-left: none;
+    border-top: none;
+    border: 1px solid $first-color;
+
+    @media #{$messaging-small} {  
+
+      border-radius: 0;
+      border: none;
+
+  }
+
+}

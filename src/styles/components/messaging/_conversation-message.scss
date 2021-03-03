@@ -1,0 +1,77 @@
+/* * * * * * * * * * * * * * * *
+* oservice conversation message *
+*/ 
+.oservice-conversation-message {
+
+  @include size(100%, inerit);
+  @include flex(normal, center, row);
+  @include margin($bottom: $gutter/1.5);
+
+  &--me {
+
+    @include flex(normal, center, row-reverse);
+
+  }
+
+
+  &__picture {
+
+    @include margin($right: $gutter/2);
+
+
+    &--me {
+
+      @include margin($left: $gutter/2, $right: 0);
+
+    }
+
+  }
+
+  &__content-and-date {
+
+    @include flex(normal, normal, column); 
+
+  }
+
+  &__content {
+    
+    @include flex(center, center, row); 
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    padding: 0.5rem;
+    background-color: $first-color;
+
+      &--me {
+
+      background-color: $second-color;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 10px;
+
+    }
+   }
+
+  &__date {
+
+    @include size(100%, inerit);
+    @include flex(flex-start, normal, row); 
+
+    color:grey;
+    font-size: .6rem;
+    font-style: italic;
+
+    &--me {
+
+      @include flex(flex-end, normal, row); 
+      justify-content: flex-end;
+
+    }
+
+   }
+
+  &:last-of-type {
+
+    @include margin($bottom: 0);
+
+  }
+
+}

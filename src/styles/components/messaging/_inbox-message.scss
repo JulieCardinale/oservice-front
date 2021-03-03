@@ -1,0 +1,67 @@
+/* * * * * * * * * * * * *
+* oservice inbox messages *
+*/ 
+.oservice-inbox-message {
+
+  @include size(100%, 160px);
+
+  border-bottom: 1px solid white;
+  padding: $gutter / 2;
+  position: relative;
+
+  @include flex(center, normal, column);
+
+  &:hover {
+
+    background-color: $second-color;
+    cursor: pointer;
+
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &--selected {
+
+    background-color: $second-color;
+
+  }
+
+  &__picture-announcement-recipient {
+
+    @include flex(flex-start, center, row);
+
+  }
+
+  &__number-date {
+
+    @include flex(flex-end, flex-end, column);
+
+  }
+
+  &__number {
+
+    @include size(35px, 35px);
+    @include flex(center, center, row);
+    @include margin($bottom: 2px);
+
+    @media #{$messaging-small} {  
+      @include size(25px, 25px);
+    } 
+
+  }
+
+  &__number--icon {
+
+    position: absolute;
+    font-size: 35px;
+    color: white;
+
+    @media #{$messaging-small} {  
+      font-size: 25px;
+    } 
+
+  }
+
+}

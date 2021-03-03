@@ -1,0 +1,8 @@
+.oservice-user-profile {
+
+    @include flex(center, center, column);
+    & p, h2 { text-align: center }
+    
+}
+
+

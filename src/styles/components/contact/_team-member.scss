@@ -1,0 +1,24 @@
+
+
+/* * * * * * * * * * * *
+* oservice team member *
+*/ 
+.oservice-team-member {
+
+  @include flex(space-between, center, column);
+  @include size(300px, inerit);
+
+  @media #{$small} {
+
+    @include margin($bottom: $gutter);
+    @include flex(space-between, normal, column);
+
+    &:last-of-type {
+
+      @include margin($bottom: 0);
+
+    }
+
+  }
+
+}

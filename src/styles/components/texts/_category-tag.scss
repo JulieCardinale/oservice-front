@@ -1,0 +1,30 @@
+/* * * * * * * * * * * * *
+* o'service category tag *
+*/ 
+.oservice-category-tag-basic {
+
+    @include margin($bottom: $gutter);
+
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5rem;
+    font-size : 1rem;
+    border-radius: 10px;
+    background-color: $first-color;
+
+    @media #{$small} { font-size : 0.8rem }
+
+}
+
+
+/* * * * * * * * * * * * *
+* o'service category tag *
+*/ 
+.oservice-category-tag-card {
+
+    @extend .oservice-category-tag-basic;
+
+    @include margin($bottom: $gutter/2);
+
+}
