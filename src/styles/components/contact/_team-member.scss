@@ -13,12 +13,6 @@
     @include margin($bottom: $gutter);
     @include flex(space-between, normal, column);
 
-    &:last-of-type {
-
-      @include margin($bottom: 0);
-
-    }
-
   }
 
 }
