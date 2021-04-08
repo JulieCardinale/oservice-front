@@ -69,7 +69,7 @@ const LastAnnouncements = ({
     <div className="oservice-last-announcements">
       {/* LAST ANNOUNCEMENTS - LOADER */}
       <Loader active={isLoading} />
-      {!isLoading && lastAnnouncementsList[0].id && (
+      {!isLoading && lastAnnouncementsList && (
         <>
           {/* LAST ANNOUNCEMENTS - MAIN MESSAGE */}
           <PageMainMessage
