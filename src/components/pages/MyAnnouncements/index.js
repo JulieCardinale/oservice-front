@@ -60,7 +60,7 @@ const MyAnnouncements = ({
       <Loader active={isLoading} />
 
       {/* MY ANNOUNCEMENTS - MAIN MESSAGE */}
-      {!isLoading && myAnnouncementsList[0].id && (
+      {!isLoading && myAnnouncementsList && (
         <>
           <PageMainMessage
             line01={

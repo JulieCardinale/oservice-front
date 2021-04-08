@@ -36,7 +36,7 @@ const AnnouncementsList = ({
     tabIndex="0"
     className={className}
   >
-    {announcementsList[0].id &&
+    {announcementsList &&
       announcementsList.map((announcement, index) => (
         /* MY ANNOUNCEMENTS LIST - ANNOUNCEMENT */
         <div key={index}>
