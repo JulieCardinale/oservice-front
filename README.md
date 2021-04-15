@@ -26,7 +26,7 @@ With O'Service you can post announcements and help people in your city.
         <img src="https://jcdle-porfolio.herokuapp.com/images/tools/icon_api.png" alt="express" width="50" height="50"/>
     </a>
     <a href="https://fr.reactjs.org/" target="_blank" rel="noopener noreferrer">
-        <img src="https://jcdle-porfolio.herokuapp.com/images/tools/icon_react.png" alt="react" width="50" height="50"/>
+        <img src="https://jcdle-porfolio.herokuapp.com/images/tools/icon_react.png" alt="react" width="55" height="50"/>
     </a>
     <a href="https://redux.js.org/" target="_blank" rel="noopener noreferrer">
         <img src="https://jcdle-porfolio.herokuapp.com/images/tools/icon_redux_2.png" alt="redux" width="50" height="50"/>
