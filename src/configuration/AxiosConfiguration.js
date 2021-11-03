@@ -9,7 +9,7 @@ const { connectedUserToken } = sessionStorage;
  * api
  * @infos : api adress
  */
-export const api = 'https://aws.oservice.cloudns.cl/oservice-back';
+export const api = 'https://oservice-api.fr';
 
 /*
  * ApiClient

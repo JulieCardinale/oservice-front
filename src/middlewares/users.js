@@ -116,7 +116,7 @@ const user = (store) => (next) => (action) => {
            */
           axios
             .post(
-              'https://aws.oservice.cloudns.cl/oservice-back/proxy-picture-api.php',
+              'https://oservice-api.fr/proxy-picture-api.php',
               userFormPictureFormData
             )
             .then((mediaCreateReponse) => {
@@ -143,7 +143,7 @@ const user = (store) => (next) => (action) => {
                  */
                 axios
                   .post(
-                    'https://aws.oservice.cloudns.cl/oservice-back/proxy-api.php',
+                    'https://oservice-api.fr/proxy-api.php',
                     {
                       userPictureId: mediaCreateReponse.data.id,
                       picture: mediaCreateReponse.data.source_url,
