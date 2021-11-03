@@ -139,10 +139,8 @@ const cities = (store) => (next) => (action) => {
        * getState
        * @info : get create or update announcement form values from state
        */
-      const {
-        announcementFormCityName,
-        announcementFormCityDepartmentCode,
-      } = store.getState().forms.announcementForm;
+      const { announcementFormCityName, announcementFormCityDepartmentCode } =
+        store.getState().forms.announcementForm;
       /*
        * API POST
        * @info : create city term when city select value change

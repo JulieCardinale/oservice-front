@@ -409,9 +409,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get category filter form category id values from state
        */
-      const {
-        categoryFilterFormCategoryId,
-      } = store.getState().forms.categoryFilterForm;
+      const { categoryFilterFormCategoryId } =
+        store.getState().forms.categoryFilterForm;
       /*
        * getState
        * @info : get city filter form city id values from state
@@ -421,9 +420,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get number of total result per page configured from state
        */
-      const {
-        numberOfResultsPerPageConfigured,
-      } = store.getState().announcements;
+      const { numberOfResultsPerPageConfigured } =
+        store.getState().announcements;
       /*
        * API GET
        * @info : get last announcements
@@ -481,9 +479,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get category filter form category id values from state
        */
-      const {
-        categoryFilterFormCategoryId,
-      } = store.getState().forms.categoryFilterForm;
+      const { categoryFilterFormCategoryId } =
+        store.getState().forms.categoryFilterForm;
       /*
        * getState
        * @info : get city filter form city id values from state
@@ -493,9 +490,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get number of total result per page configured from state
        */
-      const {
-        numberOfResultsPerPageConfigured,
-      } = store.getState().announcements;
+      const { numberOfResultsPerPageConfigured } =
+        store.getState().announcements;
 
       /*
        * API GET

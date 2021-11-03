@@ -469,10 +469,8 @@ const user = (store) => (next) => (action) => {
        * getState
        * @info : get auth form values from state
        */
-      const {
-        authFormEmail,
-        authFormPassword,
-      } = store.getState().forms.authForm;
+      const { authFormEmail, authFormPassword } =
+        store.getState().forms.authForm;
       /*
        * API POST
        * @info : post announcement
