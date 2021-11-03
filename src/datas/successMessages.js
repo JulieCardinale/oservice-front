@@ -3,7 +3,7 @@ export default {
     title: 'Félicitations !',
     titleAlt: "C'est noté !",
     content:
-      'Votre compte a bien été créé, vous allez être redirigé(e) vers la page de connexion.',
+      "Votre compte a bien été créé, vous allez être redirigé(e) vers la page d'accueil.",
     contentAlt:
       'Votre profil a bien été modifié, vous allez être redirigé(e) vers votre profil public.',
   },
