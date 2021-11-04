@@ -1,6 +1,6 @@
 /* Import(s) */
 import { useEffect } from 'react';
-import { formatDateExplicitWDDMY } from 'selectors';
+import { formatDateNumericDMY } from 'selectors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
@@ -131,7 +131,7 @@ const AnnouncementDetailsInfos = ({
           text={
             announcementDetails &&
             announcementDetails.modified &&
-            formatDateExplicitWDDMY(
+            formatDateNumericDMY(
               announcementDetails.modified.slice(0, 4),
               announcementDetails.modified.slice(5, 7),
               announcementDetails.modified.slice(8, 10)

@@ -112,174 +112,95 @@ const user = (store) => (next) => (action) => {
         if (action.formMode === 'create') {
           /*
            * API POST
-           * @info : create user
-           *
-           * @content :
-           * userPictureId             => User picture id
-           * picture                   => User picture source url
-           * username                  => User first name & last name
-           * first_name                => User first name
-           * last_name                 => User last name picture id
-           * sex                       => User sex
-           * birth_date                => User birthdate
-           * email                     => User email
-           * address                   => User address
-           * postal_code               => User postcode
-           * city                      => User city
-           * description               => User description
-           * password                  => User password
+           * @info : post media
            */
-          ApiClient.post('/wp/v2/users/register', {
-            userPictureId: '',
-            picture: '',
-            username: `${userFormFirstname} ${userFormLastname}`,
-            first_name: userFormFirstname,
-            last_name: userFormLastname,
-            sex: userFormSex,
-            birth_date: userFormBirthdate,
-            email: userFormEmail,
-            address: userFormAddress,
-            postal_code: userFormPostCode,
-            city: userFormCityName,
-            description: userFormDescription,
-            password: userFormPassword,
-          })
-            .then((userCreateReponse) => {
-              if (userCreateReponse.data.code === 201) {
+          axios
+            .post(`${api}/proxy-picture-api.php`, userFormPictureFormData)
+            .then((mediaCreateReponse) => {
+              if (mediaCreateReponse.status === 201) {
                 /*
                  * API POST
-                 * @info : user auth
+                 * @info : post announcement
                  *
                  * @content :
-                 * username
-                 * password
+                 * userPictureId             => User picture id
+                 * picture                   => User picture source url
+                 * username                  => User first name & last name
+                 * first_name                => User first name
+                 * last_name                 => User last name picture id
+                 * sex                       => User sex
+                 * birth_date                => User birthdate
+                 * email                     => User email
+                 * address                   => User address
+                 * postal_code               => User postcode
+                 * city                      => User city
+                 * description               => User description
+                 * password                  => User password
+                 * role                      => User role 'member'
                  */
-                ApiClient.post('/jwt-auth/v1/token', {
-                  username: userFormEmail,
-                  password: userFormPassword,
-                })
+                axios
+                  .post(`${api}/proxy-api.php`, {
+                    userPictureId: mediaCreateReponse.data.id,
+                    picture: mediaCreateReponse.data.source_url,
+                    username: `${userFormFirstname} ${userFormLastname}`,
+                    first_name: userFormFirstname,
+                    last_name: userFormLastname,
+                    sex: userFormSex,
+                    birth_date: userFormBirthdate,
+                    email: userFormEmail,
+                    address: userFormAddress,
+                    postal_code: userFormPostCode,
+                    city: userFormCityName,
+                    description: userFormDescription,
+                    password: userFormPassword,
+                    roles: 'member',
+                  })
                   /*
                    * SUCCESS
                    * @info :
-                   * sessionStorage.setItem       => When user is logged we store his datas to sessionStorage
-                   * ApiClientUserToken.post      => Post media using user token
+                   * loadEnd                 => stop on submit loading
+                   * displaySuccessMessage   => display success message
+                   * setTimeout              => after 3sec redirect to my announcements page
                    */
-                  .then((authResponse) => {
-                    const { success } = authResponse.data;
-                    if (success) {
-                      sessionStorage.setItem('userIsLogged', true);
-                      sessionStorage.setItem(
-                        'connectedUserToken',
-                        authResponse.data.data.token
-                      );
-                      sessionStorage.setItem(
-                        'connectedUserId',
-                        authResponse.data.data.id
-                      );
-                      /*
-                       * API POST
-                       * @info : post media
-                       */
-                      axios
-                        .post(
-                          `${api}/wp-json/wp/v2/media`,
-                          userFormPictureFormData,
-                          {
-                            headers: {
-                              Authorization: `Bearer ${authResponse.data.data.token}`,
-                            },
-                          }
-                        )
-                        .then((mediaCreateResponse) => {
-                          if (mediaCreateResponse.status === 201) {
-                            /*
-                             * API PATCH
-                             * @info : patch user
-                             *
-                             * @content :
-                             * userPictureId             => user picture id
-                             * picture                   => user picture source url
-                             *
-                             * @params
-                             * connectedUserId           => id of user to update
-                             */
-                            axios
-                              .patch(
-                                `${api}/wp-json/wp/v2/users/${userCreateReponse.data.id}`,
-                                {
-                                  userPictureId: mediaCreateResponse.data.id,
-                                  picture: mediaCreateResponse.data.source_url,
-                                },
-                                {
-                                  headers: {
-                                    Authorization: `Bearer ${authResponse.data.data.token}`,
-                                  },
-                                }
-                              )
-                              /*
-                               * SUCCESS
-                               * @info :
-                               * loadEnd                 => stop on submit loading
-                               * displaySuccessMessage   => display success message
-                               * setTimeout              => after 3sec redirect to home page
-                               */
-                              .then((updateResponse) => {
-                                if (updateResponse.status === 200) {
-                                  store.dispatch(loadEnd('isLoadingOnSubmit'));
-                                  store.dispatch(displaySuccessMessage());
-                                  setTimeout(() => {
-                                    window.location = '/';
-                                  }, 3000);
-                                }
-                              })
-                              /*
-                               * FINALLY
-                               * @info :
-                               * loadEnd => stop on submit loading
-                               */
-                              .catch(() => {})
-                              .finally(() => {
-                                store.dispatch(loadEnd('isLoadingOnSubmit'));
-                              });
-                          }
-                        })
-                        /*
-                         * ERRORS (handling with API response)
-                         * @info :
-                         * errorCode                                       => store errorCode
-                         * userFormPictureErrorMessage                     => display error when image size > 2Mo
-                         * focusToField                                    => focus to picture loader
-                         */
-                        .catch((error) => {
-                          const errorCode = error.response.data.code;
-                          if (
-                            errorCode === 'rest_upload_unknown_error' ||
-                            errorCode === 'rest_upload_no_content_disposition'
-                          ) {
-                            store.dispatch(
-                              setError(
-                                'userFormErrors',
-                                'userFormPictureErrorMessage',
-                                'Votre image dépasse la taille maximale autorisée de 2Mo.'
-                              )
-                            );
-                            focusToField('#oservice-picture-loader');
-                          }
-                        })
-                        .finally(() => {});
+                  .then((contentCreateResponse) => {
+                    if (contentCreateResponse.status === 201) {
+                      store.dispatch(loadEnd('isLoadingOnSubmit'));
+                      store.dispatch(displaySuccessMessage());
+                      setTimeout(() => {
+                        window.location = '/connexion';
+                      }, 3000);
                     }
-                  })
-                  /*
-                   * ERRORS : auth
-                   */
-                  .catch(() => {})
-                  .finally(() => {});
+                  });
               }
+              /*
+               * ERRORS (handling with API response)
+               * @info :
+               * errorCode                                       => store errorCode
+               * announcementFormSetPictureError   => display error when image size > 2Mo
+               * focusToField                                    => focus to picture loader
+               */
             })
-            /*
-             * ERRORS : register
-             */
-            .catch(() => {})
+            .catch((error) => {
+              const errorCode = error.response.data.code;
+              if (
+                errorCode === 'rest_upload_unknown_error' ||
+                errorCode === 'rest_upload_no_content_disposition'
+              ) {
+                store.dispatch(
+                  setError(
+                    'userFormErrors',
+                    'userFormPictureErrorMessage',
+                    'Votre image dépasse la taille maximale autorisée de 2Mo.'
+                  )
+                );
+                focusToField('#oservice-picture-loader');
+              }
+              /*
+               * FINALLY
+               * @info :
+               * loadEnd                                         => stop on submit loading
+               */
+            })
             .finally(() => {
               store.dispatch(loadEnd('isLoadingOnSubmit'));
             });
@@ -327,7 +248,8 @@ const user = (store) => (next) => (action) => {
                   store.dispatch(loadEnd('isLoadingOnSubmit'));
                   store.dispatch(displaySuccessMessage());
                   setTimeout(() => {
-                    window.location = `/profil-utilisateur/${connectedUserId}`;
+                    sessionStorage.clear();
+                    window.location = '/connexion';
                   }, 3000);
                 }
                 /*
@@ -407,7 +329,8 @@ const user = (store) => (next) => (action) => {
                         store.dispatch(loadEnd('isLoadingOnSubmit'));
                         store.dispatch(displaySuccessMessage());
                         setTimeout(() => {
-                          window.location = `/profil-utilisateur/${connectedUserId}`;
+                          sessionStorage.clear();
+                          window.location = '/connexion';
                         }, 3000);
                       }
                     });
@@ -469,10 +392,8 @@ const user = (store) => (next) => (action) => {
        * getState
        * @info : get auth form values from state
        */
-      const {
-        authFormEmail,
-        authFormPassword,
-      } = store.getState().forms.authForm;
+      const { authFormEmail, authFormPassword } =
+        store.getState().forms.authForm;
       /*
        * API POST
        * @info : post announcement

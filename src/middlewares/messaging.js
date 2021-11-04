@@ -100,9 +100,8 @@ const messaging = (store) => (next) => (action) => {
        * getState
        * @info : get contact form message value from state
        */
-      const {
-        firstContactFormMessageValue,
-      } = store.getState().forms.firstContactForm;
+      const { firstContactFormMessageValue } =
+        store.getState().forms.firstContactForm;
 
       /*
        * getState
@@ -364,9 +363,8 @@ const messaging = (store) => (next) => (action) => {
        * getState
        * @info : get conversation form message value from state
        */
-      const {
-        conversationFormMessageValue,
-      } = store.getState().forms.conversationForm;
+      const { conversationFormMessageValue } =
+        store.getState().forms.conversationForm;
 
       /*
        * API POST

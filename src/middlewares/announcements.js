@@ -409,9 +409,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get category filter form category id values from state
        */
-      const {
-        categoryFilterFormCategoryId,
-      } = store.getState().forms.categoryFilterForm;
+      const { categoryFilterFormCategoryId } =
+        store.getState().forms.categoryFilterForm;
       /*
        * getState
        * @info : get city filter form city id values from state
@@ -421,9 +420,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get number of total result per page configured from state
        */
-      const {
-        numberOfResultsPerPageConfigured,
-      } = store.getState().announcements;
+      const { numberOfResultsPerPageConfigured } =
+        store.getState().announcements;
       /*
        * API GET
        * @info : get last announcements
@@ -434,7 +432,12 @@ const announcements = (store) => (next) => (action) => {
        * orderby                   => last modified first
        */
       ApiClient.get(
-        `/wp/v2/announcements/?per_page=${numberOfResultsPerPageConfigured}&announcement-categories=${categoryFilterFormCategoryId}&announcement-cities=${cityFilterFormCityId}&orderby=modified`
+        `/wp/v2/announcements/?per_page=${numberOfResultsPerPageConfigured}${
+          categoryFilterFormCategoryId &&
+          `&announcement-categories=${categoryFilterFormCategoryId}`
+        }${
+          cityFilterFormCityId && `&announcement-cities=${cityFilterFormCityId}`
+        }&orderby=modified`
       )
         .then((response) => {
           if (response.status === 200) {
@@ -481,9 +484,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get category filter form category id values from state
        */
-      const {
-        categoryFilterFormCategoryId,
-      } = store.getState().forms.categoryFilterForm;
+      const { categoryFilterFormCategoryId } =
+        store.getState().forms.categoryFilterForm;
       /*
        * getState
        * @info : get city filter form city id values from state
@@ -493,9 +495,8 @@ const announcements = (store) => (next) => (action) => {
        * getState
        * @info : get number of total result per page configured from state
        */
-      const {
-        numberOfResultsPerPageConfigured,
-      } = store.getState().announcements;
+      const { numberOfResultsPerPageConfigured } =
+        store.getState().announcements;
 
       /*
        * API GET
@@ -507,7 +508,12 @@ const announcements = (store) => (next) => (action) => {
        * orderby                   => last modified first
        */
       ApiClient.get(
-        `/wp/v2/announcements/?per_page=${numberOfResultsPerPageConfigured}&announcement-categories=${categoryFilterFormCategoryId}&announcement-cities=${cityFilterFormCityId}&orderby=modified`
+        `/wp/v2/announcements/?per_page=${numberOfResultsPerPageConfigured}${
+          categoryFilterFormCategoryId &&
+          `&announcement-categories=${categoryFilterFormCategoryId}`
+        }${
+          cityFilterFormCityId && `&announcement-cities=${cityFilterFormCityId}`
+        }&orderby=modified`
       )
         .then((response) => {
           if (response.status === 200) {
