@@ -36,6 +36,7 @@ With O'Service you can post announcements and help people in your city.
 </br>
 
 <p align="center">
+  <a href="https://oservice.netlify.app" target="_blank" rel="noopener noreferrer">Online version</a> •
   <a href="#main-features">Main Features</a> •
   <a href="#run-the-app">Run the app</a>
 </p>
