@@ -272,7 +272,7 @@ const UserForm = ({
               aria="Soumettre le formulaire de création / modification utisateur"
               className="oservice-button-basic"
               submit
-              text={formMode === 'create' ? "S'incrire" : 'Modifier mon profil'}
+              text={formMode === 'create' ? "S'inscrire" : 'Modifier mon profil'}
             />
           </form>
         </>
